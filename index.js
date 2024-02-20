@@ -59,9 +59,8 @@ function init() {
         }
     ])
     .then((answers) => {
-        console.log(answers);
-        console.log(answers.woosh);
-        fs.writeFile('README.md' , potentialFile, (err) => {
+        
+        fs.writeFile('README.md' , readMeTemplate, (err) => {
             console.log(err);
         })
     }
