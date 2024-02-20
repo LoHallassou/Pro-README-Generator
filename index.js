@@ -58,6 +58,16 @@ function init() {
             message: "Please select a license for your project",
             choices: ['AFL-3.0','Apache','Artistic','BSL','BSD','ECL','EPL','EUPL','AGPL','GPL','LGPL','ISC','LPPL','MS-PL','MPL','OSL','PostgreSQL','OFL','NCSA','Unlicense','Zlib']
         },
+        {
+            type: 'input',
+            name: 'username',
+            message: 'What is your Github username?: ',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email?: ',
+        },
 
     ])
     .then((answers) => {
@@ -80,7 +90,7 @@ function init() {
         ${answers.testing}
 
         # Contact-Info
-        $
+        For any questions you can refer to [github.com/${answers.username}] or ${answers.email}
         `
         fs.writeFile('README.md' , readMeTemplate, (err) => {
             console.log(err);
