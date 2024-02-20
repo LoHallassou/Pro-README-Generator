@@ -52,6 +52,12 @@ function init() {
             name: 'testing',
             message: 'How would one go about testing your project?: ',
         },
+        {
+            type: "list",
+            name: "license",
+            message: "Please select a license for your project",
+            choices: ['AFL-3.0','Apache','Artistic','BSL','BSD','ECL','EPL','EUPL','AGPL','GPL','LGPL','ISC','LPPL','MS-PL','MPL','OSL','PostgreSQL','OFL','NCSA','Unlicense','Zlib']
+        },
 
     ])
     .then((answers) => {
@@ -72,6 +78,9 @@ function init() {
 
         # Tests
         ${answers.testing}
+
+        # Contact-Info
+        $
         `
         fs.writeFile('README.md' , readMeTemplate, (err) => {
             console.log(err);
