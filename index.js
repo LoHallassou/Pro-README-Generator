@@ -40,26 +40,29 @@ function init() {
         {
             type: 'input',
             name: 'guidelines',
-            message: 'What are the guidelines on how to ?: ',
+            message: 'What are the guidelines on how to use it?: ',
         },
         {
             type: 'input',
             name: 'testing',
             message: 'How would one go about testing your project?: ',
         },
-        {
-            type: 'input',
-            name: 'info',
-            message: 'What is Your Project Title?: ',
-        },
-        {
-            type: 'input',
-            name: 'info',
-            message: 'What is Your Project Title?: ',
-        }
+
     ])
     .then((answers) => {
+        const readMeTemplate = 
+        `# ${answers.title}
         
+        # Description
+
+        # Installation
+
+        # Usage
+
+        # How To Contribute
+
+        # Tests
+        `
         fs.writeFile('README.md' , readMeTemplate, (err) => {
             console.log(err);
         })
