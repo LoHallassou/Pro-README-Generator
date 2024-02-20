@@ -44,6 +44,11 @@ function init() {
         },
         {
             type: 'input',
+            name: 'contributions',
+            message: 'How would one go about making contributions to your project?: ',
+        },
+        {
+            type: 'input',
             name: 'testing',
             message: 'How would one go about testing your project?: ',
         },
@@ -54,14 +59,19 @@ function init() {
         `# ${answers.title}
         
         # Description
+        ${answers.description}
 
         # Installation
+        ${answers.installation}
 
         # Usage
+        ${answers.guidlines}
 
         # How To Contribute
+        ${answers.contributions}
 
         # Tests
+        ${answers.testing}
         `
         fs.writeFile('README.md' , readMeTemplate, (err) => {
             console.log(err);
